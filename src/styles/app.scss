@@ -2,7 +2,73 @@
   margin: 0;
   padding: 0;
 }
-#app{
+.light {
+  --color: #181818;
+  --color-primary: #409eff;
+  --color-primary-light1: #64b1ff;
+  --color-primary-light2: #83c1ff;
+  --color-primary-light3: #a4d2ff;
+  --color-primary-light4: #b9dbfd;
+  --color-primary-light5: #d6ebff;
+  --color-primary-light6: #ebf6ff;
+  --text-color-primary: #000000;
+  --text-color: #292929;
+  --text-color1: rgb(75, 75, 75);
+  --text-color2: rgb(105, 105, 105);
+  --text-color3: rgb(124, 124, 124);
+  --text-color4: rgb(175, 175, 175);
+  --bg-color: #fff;
+}
+
+#everthing {
+  color: var(--text-color);
+  padding-top: 35px;
+  .search-box {
     display: flex;
-    flex-direction: column;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    height: 35px;
+    width: 100%;
+    background: var(--bg-color);
+    justify-content: center;
+    button {
+      background: var(--bg-color);
+      border: 1px solid var(--text-color4);
+      font-size: 14px;
+      padding: 0 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        background: var(--color-primary-light6);
+        border-color: var(--color-primary-light4);
+        color: var(--color-primary);
+      }
+      &:active {
+        background: var(--color-primary-light6);
+        border-color: var(--color-primary-light1);
+        color: var(--color-primary);
+      }
+    }
+    input {
+      border: 1px solid var(--text-color4);
+      border-radius: 4px;
+      outline: none;
+      width: 350px;
+      padding: 0 5px;
+      &:focus {
+        border-color: var(--color-primary-light1);
+      }
+    }
+    .checkbox {
+      margin-left: 15px;
+      --checkbox-size: 14px;
+      --checkbox-color: var(--color-primary);
+      --checkbox-icon-color: var(--bg-color);
+    }
+  }
+  .file {
+    height: 100%;
+  }
 }

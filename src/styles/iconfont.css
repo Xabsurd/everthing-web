@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3454724 */
+  src:url('iconfont.ttf?t=1654581120437') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-file-excel:before {
+  content: "\e7e3";
+}
+
+.icon-file-exclamation:before {
+  content: "\e7e4";
+}
+
+.icon-file-pdf:before {
+  content: "\e7e5";
+}
+
+.icon-file-image:before {
+  content: "\e7e6";
+}
+
+.icon-file-markdown:before {
+  content: "\e7e7";
+}
+
+.icon-file-unknown:before {
+  content: "\e7e8";
+}
+
+.icon-file-ppt:before {
+  content: "\e7e9";
+}
+
+.icon-file-word:before {
+  content: "\e7ea";
+}
+
+.icon-file:before {
+  content: "\e7eb";
+}
+
+.icon-file-zip:before {
+  content: "\e7ec";
+}
+
+.icon-file-text:before {
+  content: "\e7ed";
+}
+
+.icon-folder-open:before {
+  content: "\e811";
+}
+
+.icon-search:before {
+  content: "\e9a0";
+}
+
