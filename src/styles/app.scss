@@ -17,12 +17,14 @@
   --text-color2: rgb(105, 105, 105);
   --text-color3: rgb(124, 124, 124);
   --text-color4: rgb(175, 175, 175);
+  --border-color: rgb(218, 218, 218);
   --bg-color: #fff;
+  --bg-color-mask: rgba(0, 0, 0, 0.171);
 }
 
 #everthing {
   color: var(--text-color);
-  padding-top: 35px;
+  padding-top: 45px;
   .search-box {
     display: flex;
     position: fixed;
@@ -30,6 +32,7 @@
     top: 0;
     height: 35px;
     width: 100%;
+    padding: 5px 0;
     background: var(--bg-color);
     justify-content: center;
     button {
@@ -55,7 +58,8 @@
       border: 1px solid var(--text-color4);
       border-radius: 4px;
       outline: none;
-      width: 350px;
+      flex: 1;
+      min-width: 50px;
       padding: 0 5px;
       &:focus {
         border-color: var(--color-primary-light1);
@@ -68,7 +72,10 @@
       --checkbox-icon-color: var(--bg-color);
     }
   }
-  .file {
+  .file{
     height: 100%;
+  }
+  .image-viewer{
+    display: none;
   }
 }

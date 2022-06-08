@@ -50,12 +50,18 @@
 .icon-file-zip:before {
   content: "\e7ec";
 }
+.icon-file-7z:before {
+  content: "\e7ec";
+}
+.icon-file-rar:before {
+  content: "\e7ec";
+}
 
 .icon-file-text:before {
   content: "\e7ed";
 }
 
-.icon-folder-open:before {
+.icon-folder:before {
   content: "\e811";
 }
 
