@@ -140,14 +140,16 @@ export default {
     }
     > div {
       height: 100%;
-      padding: 0 15px;
+      padding: 0 5px;
       box-sizing: border-box;
       border-right: 1px solid var(--border-color);
       border-bottom: 1px solid var(--border-color);
       flex: 1;
       display: flex;
       align-items: center;
-      z-index: 1000;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .absurd-image {
       width: 32px;
