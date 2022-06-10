@@ -38,10 +38,10 @@ export default {
     fill: #d3cbe4;
   }
   .path4 {
-    fill: #4e4e88;
+    fill: #80aaff;
   }
   .path5 {
-    fill: #363671;
+    fill: #6680ff;
   }
   .text {
     display: block;

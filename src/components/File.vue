@@ -21,7 +21,7 @@
         >
           <folder-svg v-if="data.type === 'folder'"></folder-svg>
           <file-svg v-if="data.type !== 'folder'">{{ getExt(data.name).toUpperCase() }}</file-svg>
-          {{ data.name }}
+          <div class="name">{{ data.name }}</div>
         </div>
       </DynamicScrollerItem>
       <DynamicScrollerItem
@@ -35,7 +35,7 @@
         <div>
           <folder-svg v-if="item.type === 'folder'"></folder-svg>
           <file-svg v-if="item.type !== 'folder'">{{ getExt(item.name).toUpperCase() }}</file-svg>
-          {{ item.name }}
+          <div class="name">{{ item.name }}</div>
         </div>
         <div>{{ sizeFormat(item.size) }}</div>
         <div>{{ dateFormat(item.date_modified) }}</div>
@@ -80,6 +80,10 @@ export default {
     getExt(name) {
       try {
         let ext = name.split(".").pop();
+        //最长4个字符
+        if (ext.length > 4) {
+          ext = ext.substr(0, 4);
+        }
         return ext;
       } catch (error) {
         return "";
@@ -155,6 +159,12 @@ export default {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      .name {
+        width: calc(100% - 50px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
     }
     svg,
     embed {
@@ -176,14 +186,19 @@ export default {
       flex-direction: column;
       padding: 5px;
       box-sizing: border-box;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-align: center;
+
       svg,
       embed {
         width: calc(var(--cellSize) - 50px);
         height: calc(var(--cellSize) - 50px);
         font-size: calc(var(--cellSize) - 50px) !important;
+      }
+      .name {
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+        white-space: nowrap;
       }
       &:hover {
         background-color: var(--color-primary-light6);

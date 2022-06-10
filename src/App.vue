@@ -52,7 +52,7 @@ export default {
       isLayout: true,
       imageExt: ["jpg", "jpeg", "png", "gif", "bmp", "webp"],
       imgs: [],
-      baseUrl: "/api",
+      baseUrl: "/",
     };
   },
   methods: {
