@@ -52,7 +52,7 @@ export default {
       isLayout: true,
       imageExt: ["jpg", "jpeg", "png", "gif", "bmp", "webp"],
       imgs: [],
-      baseUrl: "/",
+      baseUrl: "/api",
     };
   },
   methods: {
@@ -167,7 +167,6 @@ export default {
       const obs = new ResizeObserver(this.resize);
       obs.observe(this.$refs.everthing);
     });
-    console.log(this.$refs["image-viewer"]);
     // const _this = this;
     this.imgv = new Viewer(this.$refs["image-viewer"], {
       viewed() {

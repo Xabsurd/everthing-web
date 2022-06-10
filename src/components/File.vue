@@ -19,13 +19,8 @@
           :key="index * dindex"
           @click="handleItmeClick(data)"
         >
-          <absurd-image
-            :src="
-              data.type === 'folder'
-                ? './assets/filetype/' + iconSize + '/folder.png'
-                : getIcon(data.name)
-            "
-          ></absurd-image>
+          <folder-svg v-if="data.type === 'folder'"></folder-svg>
+          <file-svg v-if="data.type !== 'folder'">{{ getExt(data.name).toUpperCase() }}</file-svg>
           {{ data.name }}
         </div>
       </DynamicScrollerItem>
@@ -38,13 +33,8 @@
         @click="handleItmeClick(item)"
       >
         <div>
-          <absurd-image
-            :src="
-              item.type === 'folder'
-                ? './assets/filetype/' + iconSize + '/folder.png'
-                : getIcon(item.name)
-            "
-          ></absurd-image>
+          <folder-svg v-if="item.type === 'folder'"></folder-svg>
+          <file-svg v-if="item.type !== 'folder'">{{ getExt(item.name).toUpperCase() }}</file-svg>
           {{ item.name }}
         </div>
         <div>{{ sizeFormat(item.size) }}</div>
@@ -56,6 +46,8 @@
 </template>
 
 <script>
+import FileSvg from "./FileSvg.vue";
+import FolderSvg from "./FolderSvg.vue";
 export default {
   name: "file-box",
   props: {
@@ -66,6 +58,10 @@ export default {
       default: 200,
     },
   },
+  components: {
+    FileSvg,
+    FolderSvg,
+  },
   data() {
     return {
       iconSize: 512,
@@ -75,10 +71,19 @@ export default {
     handleItmeClick(item) {
       this.$emit("itmeclick", item);
     },
-    //获取扩展名
+
     getIcon(name) {
       let ext = name.split(".").pop();
       return "./assets/filetype/" + this.iconSize + "/" + ext + ".png";
+    },
+    //获取扩展名
+    getExt(name) {
+      try {
+        let ext = name.split(".").pop();
+        return ext;
+      } catch (error) {
+        return "";
+      }
     },
     dateFormat(date) {
       const d = new Date(date / 10 / 1000);
@@ -151,7 +156,8 @@ export default {
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-    .absurd-image {
+    svg,
+    embed {
       width: 32px;
       height: 32px;
       margin-right: 10px;
@@ -173,7 +179,8 @@ export default {
       overflow: hidden;
       text-overflow: ellipsis;
       text-align: center;
-      .absurd-image {
+      svg,
+      embed {
         width: calc(var(--cellSize) - 50px);
         height: calc(var(--cellSize) - 50px);
         font-size: calc(var(--cellSize) - 50px) !important;

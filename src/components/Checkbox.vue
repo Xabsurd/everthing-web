@@ -18,7 +18,6 @@ export default {
   },
   methods: {
     handleClick() {
-      console.log(this.modelValue);
       this.$emit("update:modelValue", !this.modelValue);
     },
   },
